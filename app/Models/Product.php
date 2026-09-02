@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\StockMovement;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -20,4 +20,8 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function movements()
+{
+    return $this->hasMany(StockMovement::class);
+}
 }
